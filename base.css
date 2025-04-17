@@ -1,0 +1,191 @@
+:root {
+  /* Colors */
+  --Gradient: linear-gradient(90deg, #50724e 25%, #5fa25c 100%);
+  --BG-gradient: linear-gradient(180deg, #f4f3e7 0%, #cfd7cf 100%);
+  --Text-Body-white: rgba(255, 255, 255, 0.8);
+  --Text-Heading-White: #fff;
+  --Text-Body-80: #333;
+  --new-color: #2e5a2c;
+  --white: #fff;
+  --Text-Heading-100: #464435;
+  --Text-Body-60: rgba(51, 51, 51, 0.6);
+  --Foundation-Grey-grey-200: #a1a1a1;
+  --Foundation-Grey-grey-800: #1c1c1c;
+  --Yellow: #f2e07f;
+  --Text-Text-Chnh-87-body-text-1: rgba(1, 2, 19, 0.87);
+  --BG-Grey: #efefef;
+  --new-color: #2e5a2c;
+
+  /* Font family */
+  --font-Aeonik: "Aeonik";
+}
+
+/* Container */
+.container {
+  width: 87.5rem;
+  max-width: 87.5rem;
+  margin: 0 auto;
+}
+
+/* Typography */
+.h2 {
+  font-family: var(--font-Aeonik);
+  font-size: 2.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+.c12-12-r-pc {
+  font-family: var(--font-Aeonik);
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.00188rem;
+}
+
+.c14-14-m-pc {
+  font-family: var(--font-Aeonik);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+.c14-14-r-pc {
+  font-family: var(--font-Aeonik);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.c20-20-b {
+  font-family: var(--font-Aeonik);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+}
+.c24-b {
+  font-family: var(--font-Aeonik);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+.chip-tab-14-m-pc {
+  font-family: var(--font-Aeonik);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+.c16-16-m {
+  font-family: var(--font-Aeonik);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+.c16-16-r {
+  font-family: var(--font-Aeonik);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.c16-16-b-pc {
+  font-family: var(--font-Aeonik);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+.c24-24-r {
+  font-family: var(--font-Aeonik);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.c24-24-m-pc {
+  font-family: var(--font-Aeonik);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+}
+@media (max-width: 639px) {
+  /* Typography */
+  .chip-tab-12-m-mb {
+    font-family: var(--font-Aeonik);
+    font-size: 0.75rem !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.00188rem !important;
+  }
+  .m16-16-b-pc {
+    font-family: var(--font-Aeonik);
+    font-size: 1rem !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 150% !important;
+  }
+  .m12-12-b-capp {
+    font-family: var(--font-Aeonik);
+    font-size: 0.75rem !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 140% !important;
+    text-transform: uppercase !important;
+  }
+  .m12-12-b {
+    font-family: var(--font-Aeonik);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+  }
+  .m12-12-m {
+    font-family: var(--font-Aeonik);
+    font-size: 0.75rem !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.00188rem !important;
+  }
+  .mbutton-14-capp {
+    font-family: var(--font-Aeonik);
+    font-size: 0.875rem !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 1.375rem !important;
+    text-transform: uppercase !important;
+  }
+  .mb-14-m {
+    font-family: var(--font-Aeonik);
+    font-size: 0.875rem !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0.00219rem !important;
+  }
+  .m14-14-r {
+    font-family: var(--font-Aeonik);
+    font-size: 0.875rem !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 1.57 !important;
+  }
+}
+/* Animation */
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}

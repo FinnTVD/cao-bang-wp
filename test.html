@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Accordion</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .faq-container {
+      background-color: #f8f8f2;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .faq-header h2 {
+      color: #3c6e47;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .faq-header img {
+      width: 30px;
+      height: auto;
+    }
+
+    .faq-items {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .faq-item {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faq-question::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(74, 138, 94, 0.2) 10%, transparent 10.01%);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transform: scale(10, 10);
+      opacity: 0;
+      transition: transform 0.5s, opacity 1s;
+    }
+
+    .faq-question:active::after {
+      transform: scale(0, 0);
+      opacity: 0.3;
+      transition: 0s;
+    }
+
+    .faq-question h3 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #4a8a5e;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #3c6e47;
+      transform: scale(1.1);
+    }
+
+    .plus-icon {
+      color: white;
+      width: 16px;
+      height: 16px;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0 20px;
+    }
+
+    .faq-answer p {
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      padding-bottom: 20px;
+      color: #555;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* Hiệu ứng xoay cho icon khi mở */
+    .faq-item.active .plus-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Active state */
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 20px;
+    }
+
+    .faq-item.active .faq-answer p {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .faq-item.active .vertical-line {
+      display: none;
+    }
+
+    .faq-answer.show {
+      max-height: 300px;
+    }
+
+    @media (min-width: 768px) {
+      .faq-container {
+        padding: 40px;
+      }
+
+      .faq-header h2 {
+        font-size: 28px;
+      }
+
+      .faq-question h3 {
+        font-size: 18px;
+      }
+
+      .faq-answer p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="faq-container">
+      <div class="faq-header">
+        <h2>FREQUENTLY <img src="camera-icon.svg" alt="Camera Icon"> ASKED QUESTIONS</h2>
+      </div>
+
+      <div class="faq-items">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Why should I choose a Cao Bang travel?</h3>
+            <button class="toggle-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="faq-answer">
+            <p>Whether you seek part-time or full-time van life, cao vang travel is designed with you in mind. Our
+              engineering team has optimized innovative technology with a stunning, super-light design. With simple
+              storage for all your essentials, a full-time bathroom, a comfortable bed for two, and easy
+              maneuverability, Nomad vans give you all the comforts of home while on the road.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Why should I choose a Cao Bang travel?</h3>
+            <button class="toggle-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="faq-answer">
+            <p>Whether you seek part-time or full-time van life, cao vang travel is designed with you in mind. Our
+              engineering team has optimized innovative technology with a stunning, super-light design. With simple
+              storage for all your essentials, a full-time bathroom, a comfortable bed for two, and easy
+              maneuverability, Nomad vans give you all the comforts of home while on the road.</p>
+          </div>
+        </div>
+
+        <div class="faq-item active">
+          <div class="faq-question">
+            <h3>Why should I choose a Cao Bang travel?</h3>
+            <button class="toggle-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="faq-answer show">
+            <p>Whether you seek part-time or full-time van life, cao vang travel is designed with you in mind. Our
+              engineering team has optimized innovative technology with a stunning, super-light design. With simple
+              storage for all your essentials, a full-time bathroom, a comfortable bed for two, and easy
+              maneuverability, Nomad vans give you all the comforts of home while on the road.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Why should I choose a Cao Bang travel?</h3>
+            <button class="toggle-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="plus-icon">
+                <line x1="12" y1="5" x2="12" y2="19" class="vertical-line"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="faq-answer">
+            <p>Whether you seek part-time or full-time van life, cao vang travel is designed with you in mind. Our
+              engineering team has optimized innovative technology with a stunning, super-light design. With simple
+              storage for all your essentials, a full-time bathroom, a comfortable bed for two, and easy
+              maneuverability, Nomad vans give you all the comforts of home while on the road.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Get all FAQ items
+      const faqItems = document.querySelectorAll(".faq-item")
+
+      // Add click event listener to each FAQ question
+      faqItems.forEach((item) => {
+        const question = item.querySelector(".faq-question")
+        const answer = item.querySelector(".faq-answer")
+        const toggleBtn = item.querySelector(".toggle-btn")
+        const verticalLine = toggleBtn.querySelector(".vertical-line")
+        const paragraph = answer.querySelector("p")
+
+        question.addEventListener("click", () => {
+          // Check if this item is already active
+          const isActive = item.classList.contains("active")
+
+          // Close all FAQ items with smooth animation
+          faqItems.forEach((faqItem) => {
+            const faqAnswer = faqItem.querySelector(".faq-answer")
+            const faqParagraph = faqAnswer.querySelector("p")
+
+            if (faqItem.classList.contains("active")) {
+              // Animate paragraph first
+              faqParagraph.style.transform = "translateY(-10px)"
+              faqParagraph.style.opacity = "0"
+
+              // Then after a short delay, collapse the container
+              setTimeout(() => {
+                faqItem.classList.remove("active")
+                faqAnswer.classList.remove("show")
+              }, 200)
+
+              // Show all vertical lines in plus icons
+              const vLine = faqItem.querySelector(".vertical-line")
+              if (vLine) {
+                vLine.style.display = "block"
+              }
+            }
+          })
+
+          // If the clicked item wasn't active, open it with smooth animation
+          if (!isActive) {
+            setTimeout(() => {
+              item.classList.add("active")
+              answer.classList.add("show")
+
+              // Animate paragraph after container expands
+              setTimeout(() => {
+                paragraph.style.transform = "translateY(0)"
+                paragraph.style.opacity = "1"
+              }, 200)
+
+              // Hide vertical line to make plus become minus
+              if (verticalLine) {
+                verticalLine.style.display = "none"
+              }
+            }, 100)
+          }
+        })
+      })
+
+      // Add hover effect
+      faqItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          if (!item.classList.contains("active")) {
+            item.style.transform = "translateY(-2px)"
+            item.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.1)"
+          }
+        })
+
+        item.addEventListener("mouseleave", () => {
+          if (!item.classList.contains("active")) {
+            item.style.transform = "translateY(0)"
+            item.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.05)"
+          }
+        })
+      })
+    })
+  </script>
+</body>
+
+</html>

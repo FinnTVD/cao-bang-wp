@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- css reset -->
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="../base.css">
+  <!-- component -->
+  <link rel="stylesheet" href="../components/styles.css">
+  <!-- styles -->
+  <link rel="stylesheet" href="./styles.css">
+  <title>Layout</title>
+</head>
+
+<body>
+  <header>
+    <nav class="header__wrapper__left">
+      <a class="header__back" href="#">
+        <img src="../assets/img/layout/home.svg" alt="">
+      </a>
+    </nav>
+    <a class="header__logo" href="#">
+      <img src="../assets/img/layout/logo.png" alt="">
+    </a>
+    <nav class="header__wrapper__right">
+      <ul class="header__list">
+        <li><a href="#">Destination</a></li>
+        <li><a href="#">Destination</a></li>
+        <li><a href="#">Destination</a></li>
+      </ul>
+      <a class="header__contact" href="/contact">Contact us</a>
+    </nav>
+    <div class="header__wrapper--mb">
+      <button class="header__customize">
+        <span>Try</span>
+        <span>Customize</span>
+      </button>
+      <button class="header__menu"><img src="../assets/img/layout/menu.svg" alt=""></button>
+
+    </div>
+  </header>
+  <!-- Mobile menu -->
+  <div id="popup__menu">
+    <!-- Header -->
+    <div class="popup__menu__header">
+      <a class="logo" href="#">
+        <img src="../assets/img/layout/logo.png" alt="">
+      </a>
+
+      <div class="action">
+        <button id="menu__header__search">
+          <img src="../assets/img/layout/search.svg" alt="">
+        </button>
+        <button id="menu__header__close">
+          <img src="../assets/img/layout/close-x.svg" alt="">
+        </button>
+      </div>
+    </div>
+    <!-- Accordion -->
+    <nav class="popup__menu__nav">
+      <div class="popup__menu__accordion">
+        <button class="btn__menu__list">
+          <span class="text m12-12-b-capp">Motorbike tour</span>
+          <img class="icon" src="../assets/img/layout/arrow-right.svg" alt="">
+        </button>
+        <ul class="popup__menu__list">
+          <li><a href="#">Destination</a></li>
+          <li><a href="#">Destination</a></li>
+          <li><a href="#">Destination</a></li>
+        </ul>
+      </div>
+      <div class="popup__menu__line"></div>
+      <div class="popup__menu__accordion">
+        <button class="btn__menu__list">
+          <span class="text m12-12-b-capp">Jeep tour</span>
+          <img class="icon" src="../assets/img/layout/arrow-right.svg" alt="">
+        </button>
+        <ul class="popup__menu__list">
+          <li><a href="#">Destination</a></li>
+          <li><a href="#">Destination</a></li>
+          <li><a href="#">Destination</a></li>
+        </ul>
+      </div>
+      <div class="popup__menu__line"></div>
+      <div class="popup__menu__accordion">
+        <button class="btn__menu__list">
+          <span class="text m12-12-b-capp">Package tour</span>
+          <img class="icon" src="../assets/img/layout/arrow-right.svg" alt="">
+        </button>
+        <ul class="popup__menu__list">
+          <li><a href="#">Destination</a></li>
+          <li><a href="#">Destination</a></li>
+          <li><a href="#">Destination</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Footer -->
+    <div class="popup__menu__footer">
+      <a class="footer__link" href="#">Destination</a>
+      <a class="footer__link" href="#">Our Gallery</a>
+      <a class="footer__link" href="#">Contact Us</a>
+      <span class="footer__label m12-12-b-capp">Hotline</span>
+      <a class="footer__phone" href="tel: +84 999 888 666">
+        <img class="icon" src="../assets/img/layout/phone.svg" alt="">
+        <span class="text">+84 999 888 666</span>
+      </a>
+      <a class="footer__phone" href="tel: +84 999 888 666">
+        <img class="icon" src="../assets/img/layout/phone.svg" alt="">
+        <span class="text">+84 999 888 666</span>
+      </a>
+    </div>
+    <!-- Button Contact -->
+    <a class="popup__menu__contact" href="tel: +84 999 888 666">
+      <img class="icon" src="../assets/img/layout/phone--white.svg" alt="">
+      <span class="text mbutton-14-capp">Contact us</span>
+    </a>
+  </div>
+  <!-- Mobile search -->
+  <div id="popup__search__overlay"></div>
+  <div id="popup__search">
+    <div class="popup__search__content"></div>
+  </div>
+  <!-- NOTE: FAB -->
+  <div id="fab">
+    <div class="fab__wrapper">
+      <button class="fab__booknow">
+        Book<br />now
+      </button>
+      <button class="fab__whatsapp">
+        <div class="fab__whatsapp__icon"><img src="../assets/img/layout/whatsapp.svg" alt=""></div>
+        <div class="fab__whatsapp__animation fab__whatsapp__animation1">
+          <div class="animate-ping animation__ping__1"></div>
+        </div>
+        <div class="fab__whatsapp__animation">
+          <div class="animation__ping__2">
+          </div>
+        </div>
+        <div class="fab__whatsapp__animation">
+          <div class="animation__ping__3"></div>
+        </div>
+      </button>
+      <button class="fab__cta">
+        <img class="fab__cta__circle" src="../assets/img/layout/cta-circle.svg" alt="">
+        <img class="fab__cta__chevron" src="../assets/img/layout/cta-chevron.svg" alt="">
+      </button>
+    </div>
+  </div>
+  <main style="height: 150vh; background: black;"></main>
+  <!-- Footer -->
+  <footer>
+    <!-- background -->
+
+    <picture>
+      <!-- Ảnh dành cho màn hình nhỏ hơn 640px -->
+      <source media="(max-width: 639px)" srcset="../assets/img/layout/bg-footer-mb.jpg" />
+
+      <!-- Ảnh mặc định (>= 640px) -->
+      <img class="footer__background" src="../assets/img/layout/bg-footer.webp" alt="">
+
+    </picture>
+    <!-- cloud -->
+    <img class="footer__cloud" src="../assets/img/layout/cloud.png" alt="">
+    <div class="footer__wrapper__content">
+      <a class="footer__logo" href="#">
+        <img src="../assets/img/layout/logo.png" alt="">
+      </a>
+      <div class="footer__content">
+        <!-- Tours + Read me -->
+        <div class="footer__nav">
+          <div class="nav__item">
+            <span class="label m12-12-b-capp">Tours</span>
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              Motorbike tour
+            </a>
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              Jeep tour
+            </a>
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              Package tour
+            </a>
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              Other tour
+            </a>
+          </div>
+          <div class="nav__item">
+            <span class="label m12-12-b-capp">READ ME</span>
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              Contact Us
+            </a>
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              Our Gallery
+            </a>
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              Feedback
+            </a>
+          </div>
+        </div>
+        <!-- Contact hotline -->
+        <div class="footer__nav">
+          <div>
+            <span class="label m12-12-b-capp">Contact</span>
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              <img src="../assets/img/layout/location.svg" alt="">
+              <span>Cao Bang Loop, Vietnam</span>
+            </a>
+            <a href="mailto: hagiangepic@gmail.com" class="c14-14-m-pc mb-14-m">
+              <img src="../assets/img/layout/email.svg" alt="">
+              <span>Hagiangepic@gmail.com</span>
+            </a>
+          </div>
+          <div>
+            <span class="label m12-12-b-capp">Hotline</span>
+            <a href="tel: 84999888666" class="c14-14-m-pc mb-14-m">
+              <img src="../assets/img/layout/phone--black.svg" alt="">
+              <span>+84 999 888 666</span>
+            </a>
+            <a href="tel: 84999888666" class="c14-14-m-pc mb-14-m">
+              <img src="../assets/img/layout/phone--black.svg" alt="">
+              <span>+84 999 888 666</span>
+            </a>
+          </div>
+
+        </div>
+        <!-- Contact hotline MB -->
+        <div class="footer__contact">
+          <span class="label m12-12-b-capp">Contact US</span>
+          <div class="address">
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              <img src="../assets/img/layout/location.svg" alt="">
+              <span class="m12-12-m">5 Au Trieu street, Hoan Kiem District, Ha Noi</span>
+            </a>
+            <a href="#" class="c14-14-m-pc mb-14-m">
+              <img src="../assets/img/layout/location.svg" alt="">
+              <span class="m12-12-m">34 Tran Quoc Toan Street, Tran Hung Dao Ward, Hoan Kiem District, Hanoi</span>
+            </a>
+          </div>
+          <div class="hotline">
+            <a href="tel: 84999888666" class="c14-14-m-pc mb-14-m">
+              <img src="../assets/img/layout/phone--black.svg" alt="">
+              <span class="m12-12-m">+84 999 888 666</span>
+            </a>
+            <a href="tel: 84999888666" class="c14-14-m-pc mb-14-m">
+              <img src="../assets/img/layout/phone--black.svg" alt="">
+              <span class="m12-12-m">+84 999 888 666</span>
+            </a>
+          </div>
+          <a class="email" href="mailto: hagiangepic@gmail.com" class="c14-14-m-pc mb-14-m">
+            <img src="../assets/img/layout/email.svg" alt="">
+            <span class="mb-14-m">Hagiangepic@gmail.com</span>
+          </a>
+        </div>
+        <!-- Form + Follow Us -->
+        <div class="footer__nav footer__form">
+          <div class="form">
+            <span class="label m12-12-b-capp">Sign up for information</span>
+            <form action="submit">
+              <input placeholder="Email Address" type="email" name="email">
+              <button class="btn__submit__form">
+                <img src="../assets/img/layout/arrow-submit-form.svg" alt="">
+              </button>
+            </form>
+          </div>
+          <div class="follow">
+            <span class="label m12-12-b-capp">Follow us</span>
+            <div class="footer__socials">
+              <a href="">
+                <img src="../assets/img/layout/insta.svg" alt="">
+              </a>
+              <a href="">
+                <img src="../assets/img/layout/pinterest.svg" alt="">
+              </a>
+              <a href="">
+                <img src="../assets/img/layout/linkedin.svg" alt="">
+              </a>
+              <a href="">
+                <img src="../assets/img/layout/facebook.svg" alt="">
+              </a>
+            </div>
+            <a href="#" class="btn primary">License</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer taskbar -->
+    <div class="footer__taskbar">
+      <div class="list__taskbar">
+        <span class="taskbar__item c14-14-r-pc">Cookies</span>
+        <span class="taskbar__item c14-14-r-pc">© 2025 Cao bang travel</span>
+        <span class="taskbar__item c14-14-r-pc">Privacy</span>
+        <span class="taskbar__item c14-14-r-pc">Term & conditions</span>
+      </div>
+      <img src="../assets/img/layout/taskbar-footer.png" alt="">
+    </div>
+  </footer>
+  <!-- Import script -->
+  <script src="./script.js"></script>
+</body>
+
+</html>
