@@ -1,0 +1,62 @@
+main {
+  background: var(--white);
+}
+/* NOTE: Banner */
+#banner {
+  width: 100%;
+  position: relative;
+  height: 34.375rem;
+}
+#banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* NOTE: Motorbike grid */
+#motorbike {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+h1 {
+  color: var(--Text-Heading-100);
+}
+.motorbike__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.motorbike__categories {
+  display: flex;
+  width: fit-content;
+}
+.motorbike__categories .motorbike__category {
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background: var(--BACKGROUND-B3);
+  padding: 0 0.88rem;
+  color: var(--Text-Heading-100);
+  margin-left: 0.75rem;
+}
+.motorbike__categories .motorbike__category.active {
+  background: var(--Yellow);
+}
+.motorbike__categories .motorbike__category:first-child {
+  margin-left: 0;
+}
+.motorbike__grid {
+  margin-top: 2.06rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1.5rem;
+  row-gap: 2rem;
+}
+#motorbike .btn__viewmore {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  height: 3.25rem;
+  padding: 0 2.18rem;
+}
+#motorbike .btn__viewmore img {
+  margin-left: 0.38rem;
+}
