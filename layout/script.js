@@ -1,4 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+  let lastScrollY = window.scrollY || window.pageYOffset;
+
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    const currentScrollY = window.scrollY || window.pageYOffset;
+    const triggerPoint = window.innerHeight * 0.5;
+
+    if (currentScrollY > lastScrollY && currentScrollY > triggerPoint) {
+      // Scroll xuống + đã vượt qua 50vh
+      header.classList.add("scrolled");
+    } else if (currentScrollY < lastScrollY) {
+      // Scroll lên
+      header.classList.remove("scrolled");
+    }
+
+    lastScrollY = currentScrollY;
+  });
   function cloneAndReset(oldElement) {
     const newElement = oldElement.cloneNode(true); // true để copy cả con
 
